@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+:root {
+  --primary-navy: #0B1F3A;
+  --secondary-blue: #123C73;
+  --accent-gold: #C8A548;
+  --bg-light: #F8FAFC;
+  --surface-white: #FFFFFF;
+  --alternate-surface: #F2F5F9;
+  
+  --text-primary: #111827;
+  --text-secondary: #4B5563;
+  --muted-text: #6B7280;
+  
+  --border-light: #E5E7EB;
+  --hover-border: #CBD5E1;
+}
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --color-primary-navy: var(--primary-navy);
+  --color-secondary-blue: var(--secondary-blue);
+  --color-accent-gold: var(--accent-gold);
+  --color-bg-light: var(--bg-light);
+  --color-surface-white: var(--surface-white);
+  --color-alternate-surface: var(--alternate-surface);
+  
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-muted-text: var(--muted-text);
+  
+  --color-border-light: var(--border-light);
+  --color-hover-border: var(--hover-border);
+  
+  --shadow-premium-sm: 0 2px 8px -1px rgba(11, 31, 58, 0.03), 0 1px 3px 0 rgba(11, 31, 58, 0.02);
+  --shadow-premium-md: 0 10px 25px -5px rgba(11, 31, 58, 0.05), 0 8px 16px -6px rgba(11, 31, 58, 0.03);
+  --shadow-premium-lg: 0 20px 40px -10px rgba(11, 31, 58, 0.08), 0 12px 20px -8px rgba(11, 31, 58, 0.04);
+  --shadow-premium-xl: 0 30px 60px -15px rgba(11, 31, 58, 0.12), 0 20px 30px -10px rgba(11, 31, 58, 0.06);
+}
+
+/* Custom Base Styles and Helper Classes */
+html, body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg-light);
+  color: var(--color-text-primary);
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Global transitions for a luxurious, smooth color transition experience */
+body, 
+section, 
+header, 
+footer, 
+p, 
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6, 
+span, 
+button, 
+a, 
+input, 
+textarea, 
+select {
+  transition: background-color 0.8s cubic-bezier(0.25, 1, 0.5, 1), 
+              border-color 0.8s cubic-bezier(0.25, 1, 0.5, 1), 
+              color 0.8s cubic-bezier(0.25, 1, 0.5, 1),
+              box-shadow 0.8s cubic-bezier(0.25, 1, 0.5, 1),
+              transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Custom Scrollbar for Luxury Feeling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg-light);
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 5px;
+  border: 2px solid var(--color-bg-light);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Glassmorphism Helper */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.glass-panel-dark {
+  background: color-mix(in srgb, var(--primary-navy) 85%, transparent);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Animated mesh background helper */
+.mesh-bg {
+  background-color: var(--bg-light);
+  background-image: 
+    radial-gradient(at 10% 20%, color-mix(in srgb, var(--secondary-blue) 4%, transparent) 0px, transparent 50%),
+    radial-gradient(at 90% 10%, color-mix(in srgb, var(--accent-gold) 3%, transparent) 0px, transparent 50%),
+    radial-gradient(at 50% 80%, color-mix(in srgb, var(--primary-navy) 4%, transparent) 0px, transparent 50%),
+    radial-gradient(at 80% 90%, color-mix(in srgb, var(--secondary-blue) 2%, transparent) 0px, transparent 40%);
+  background-size: 200% 200%;
+  animation: meshFlow 20s ease infinite;
+}
+
+@keyframes meshFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Custom Cursor Styles */
+.custom-cursor {
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-accent-gold);
+  border-radius: 50%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9999;
+  transition: width 0.2s, height 0.2s, background-color 0.2s;
+}
+
+.custom-cursor-ring {
+  width: 40px;
+  height: 40px;
+  border: 1px solid color-mix(in srgb, var(--accent-gold) 35%, transparent);
+  border-radius: 50%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9998;
+  transition: transform 0.08s ease-out, width 0.2s, height 0.2s, border-color 0.2s;
+}
+
+/* Keyframe animations */
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(2deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.animate-float-slow {
+  animation: float 8s ease-in-out infinite;
+}
+
+.animate-float-medium {
+  animation: float 5s ease-in-out infinite;
+}
+
+/* Print styles */
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+  .no-print {
+    display: none !important;
+  }
+}
