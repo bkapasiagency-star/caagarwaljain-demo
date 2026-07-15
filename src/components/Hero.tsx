@@ -132,17 +132,6 @@ export default function Hero({ onOpenConsultation, onExploreServices }: HeroProp
                 </div>
               </div>
 
-              {/* Partner Preview */}
-              <div className="mt-4 flex items-center justify-between border-t border-gray-100 pt-6">
-                <div className="flex -space-x-3">
-                  <div className="w-12 h-12 rounded-full border-2 border-white bg-gray-200 overflow-hidden shadow-sm flex items-center justify-center text-xs font-bold text-[#0B1F3A]">AJ</div>
-                  <div className="w-12 h-12 rounded-full border-2 border-white bg-[#0B1F3A] overflow-hidden shadow-sm flex items-center justify-center text-xs font-bold text-white">SA</div>
-                </div>
-                <div className="text-right">
-                  <p className="text-[10px] text-gray-400 font-bold uppercase tracking-widest">Managed By</p>
-                  <p className="text-sm font-bold text-[#0B1F3A]">2 Senior FCA Partners</p>
-                </div>
-              </div>
             </div>
           </motion.div>
         </div>
